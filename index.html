@@ -215,7 +215,7 @@
 				if(x.charAt(i).toLowerCase()=='a'||x.charAt(i).toLowerCase()=='e'||x.charAt(i).toLowerCase()=='i'||x.charAt(i).toLowerCase()=='o'||x.charAt(i).toLowerCase()=='u')
 					res++;
 			}
-			document.getElementById("res").innerHTML=res;
+			document.getElementById("res").innerHTML="Number os vowels in the string is "+res;
 		}
 		if(s=="8"){
 			var x=document.getElementById("inp").value;
@@ -226,7 +226,9 @@
 					break;
 				}
 			}
-			if(res)
+			if(x<1)
+				document.getElementById("res").innerHTML="It is neither a Prime number nor composite";
+			else if(res)
 				document.getElementById("res").innerHTML="It is a Prime number";
 			else
 				document.getElementById("res").innerHTML="It is not a Prime number";
@@ -255,7 +257,7 @@
 				}
 			}
 			for(var i=0;i<alpa.length;i++){
-				res+=alpa[i].toLowerCase()+" has occured "+count[i]+"times.\n"
+				res+=alpa[i].toLowerCase()+" has occured "+count[i]+" times.\n"
 			}
 			document.getElementById("res").innerHTML=res;
 		}
