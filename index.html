@@ -88,7 +88,7 @@
 		</select>
 	</div>
 
-	<center><input  name="v" type="number" id="inp" autocomplete="off"></center><center><input type="number" id="t" name="" style="visibility: hidden"></center>
+	<center><input  name="v" type="number" id="inp" autocomplete="off"></center><center><input type="number" id="t" name="" style="visibility: hidden" autocomplete="off"></center>
 	<center><button id="submit">Submit</button></center>
 	<b><center><div id="res"></div></center></b>
 
@@ -100,7 +100,7 @@
 			}
 			else
 				document.getElementById("inp").style.visibility = "visible";
-  			if(document.getElementById("dd").value==1||document.getElementById("dd").value==8){
+  			if(document.getElementById("dd").value==1||document.getElementById("dd").value==8||document.getElementById("dd").value==9){
   				document.getElementById("inp").type = "number";
   				document.getElementById("inp").value = null;
   			}
@@ -203,8 +203,8 @@
 			var x=document.getElementById("inp").value;
 			var res="";
 			var temp=x.split(" ");
-			temp.sort();
-			res+=temp[0];
+			var res =temp.sort(function (a, b) { return b.length - a.length; })[0];
+			//res+=temp[temp.length-1];
 			document.getElementById("res").innerHTML=res;
 
 		}
@@ -226,7 +226,7 @@
 					break;
 				}
 			}
-			if(x<1)
+			if(x<=1)
 				document.getElementById("res").innerHTML="It is neither a Prime number nor composite";
 			else if(res)
 				document.getElementById("res").innerHTML="It is a Prime number";
