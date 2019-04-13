@@ -212,7 +212,7 @@
 			var x=document.getElementById("inp").value;
 			var res=0;
 			for(var i=0;i<x.length;i++){
-				if(x.charAt(i)=='a'||x.charAt(i)=='e'||x.charAt(i)=='i'||x.charAt(i)=='o'||x.charAt(i)=='u')
+				if(x.charAt(i).toLowerCase()=='a'||x.charAt(i).toLowerCase()=='e'||x.charAt(i).toLowerCase()=='i'||x.charAt(i).toLowerCase()=='o'||x.charAt(i).toLowerCase()=='u')
 					res++;
 			}
 			document.getElementById("res").innerHTML=res;
